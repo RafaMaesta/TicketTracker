@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
+	<title>Ticket Tracker</title>
 
 	<style type="text/css">
 
@@ -25,8 +25,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}
 
 	h1 {
-		color: #444;
-		background-color: transparent;
+		color: #ffffff;
+		background-color: #000d77;
 		border-bottom: 1px solid #D0D0D0;
 		font-size: 19px;
 		font-weight: normal;
@@ -85,8 +85,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</p>
 		</div>
 	</form>
-
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
 
 </body>
