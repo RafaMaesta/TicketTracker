@@ -14,14 +14,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div id="container">
 	<h1>Time Tracker</h1>
 
-	<form action="home" method="post">
+	<form action="check" method="post">
 		<div id="body">
 			<p>Login:
-				<input type="text">
+				<input type="text" name="txtLogin">
 			</p>
 
 			<p>Senha:
-				<input type="password">
+				<input type="password" name="txtSenha">
 			</p>
 
 			<p>
