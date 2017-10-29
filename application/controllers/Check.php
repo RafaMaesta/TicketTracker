@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Check_Login extends CI_Controller {
+class Check extends CI_Controller {
     function __construct()
     {
         parent::__construct();
@@ -19,13 +19,16 @@ class Check_Login extends CI_Controller {
         if($this->check_database($password) == false)
         {
           //Field validation failed.  User redirected to login page
-          $this->load->view('login_view');
+          //$this->load->view('login_view');
+          
           
         }
         else
         {
           //Go to private area
-          redirect('Home', 'refresh');
+          //redirect('Home', 'refresh');
+          $this->output->set_content_type('application/json');
+          echo true;
         }
 
 
@@ -47,7 +50,7 @@ class Check_Login extends CI_Controller {
         foreach($result as $row)
         {
           $sess_array = array(
-            'id_func' => $row->id_func,
+            'id_developer' => $row->id_developer,
             'username' => $row->username,
             'id_user_type' => $row->id_user_type
           );

@@ -1,35 +1,28 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="assets/css/login.css">
-	<title>Ticket Tracker</title>
-
-	
-</head>
-<body>
-
-<div id="container">
-	<h1>Time Tracker</h1>
-
-	<form action="check" method="post">
-		<div id="body">
-			<p>Login:
-				<input type="text" name="txtLogin">
-			</p>
-
-			<p>Senha:
-				<input type="password" name="txtSenha">
-			</p>
-
-			<p>
-				<button>Login</button>
-			</p>
-		</div>
-	</form>
-</div>
-
-</body>
-</html>
+<md-content ng-controller="LoginController" layout="row" layout-align="center center" flex>
+	<md-card flex="45">
+		<md-card-title>
+			<md-card-title-text layout-align="center center">
+				<span class="md-headline">Ticket Control</span>
+			</md-card-title-text>
+		</md-card-title>
+		<md-card-content layout="column" layout-align="center center">
+			<form action="check" method="post">
+				<div>
+					<md-input-container>
+						<label>Login</label>
+						<input ng-model="user.login">
+					</md-input-container>
+				</div>
+				<div>
+				<md-input-container>
+					<label>Password</label>
+					<input ng-model="user.password" type="password">
+				</md-input-container>
+				</div>
+			</form>	
+		</md-card-content>
+		<md-card-actions layout="column" layout-align="end end" flex>
+			<md-button class="md-raised md-primary" ng-click="login()">Submit</md-button>
+		</md-card-actions>
+	</md-card>
+</md-content>
