@@ -22,7 +22,14 @@
 			</form>	
 		</md-card-content>
 		<md-card-actions layout="column" layout-align="end end" flex>
-			<md-button class="md-raised md-primary" ng-click="login()">Submit</md-button>
+			<md-button class="md-raised md-primary" ng-click="getLogin()">Submit</md-button>
 		</md-card-actions>
 	</md-card>
 </md-content>
+
+<!--
+<form action='Check' method='POST'>
+	<input name='txtLogin' type='text' />
+	<input name='txtSenha' type='password' />
+	<button type='Submit'>Vai</button>
+<form>-->

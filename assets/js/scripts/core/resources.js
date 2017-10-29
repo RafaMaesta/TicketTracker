@@ -4,6 +4,6 @@ angular.module('timetracker')
 
 LoginResource.$inject = ['$resource'];
 function LoginResource($resource){
-    return $resource('./Check')
+    return $resource('./Check/')
 }
 

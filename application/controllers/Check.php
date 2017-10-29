@@ -4,22 +4,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Check extends CI_Controller {
     function __construct()
     {
-        parent::__construct();
+        @parent::__construct();
         $this->load->model('user','',TRUE);
     }
-	public function index()
+  public function index()
 	{
-
+        $data = json_decode(trim(file_get_contents('php://input')));
         //Importa lib Validação
         $this->load->library('form_validation');
       
         //$this->form_validation->set_rules('txtLogin', 'Username', 'trim|required|xss_clean');
         //$this->form_validation->set_rules('txtSenha', 'Password', 'trim|required|xss_clean|check_database');
-        $password = $this->input->post("txtSenha");
-        if($this->check_database($password) == false)
+        $password = $data->txtSenha;
+        $username = $data->txtLogin;
+        //$password = $this->input->post('txtSenha');
+        //$username = $this->input->post('txtLogin');
+        if($this->check_database($username, $password) == false)
         {
           //Field validation failed.  User redirected to login page
           //$this->load->view('login_view');
+          return false;
           
           
         }
@@ -28,19 +32,16 @@ class Check extends CI_Controller {
           //Go to private area
           //redirect('Home', 'refresh');
           $this->output->set_content_type('application/json');
-          echo true;
+          echo json_encode(true);
+          
         }
 
 
 		
     }
     
-    function check_database($password)
+    function check_database($username, $password)
     {
-      //Field validation succeeded.  Validate against database
-      //Pega variavel da tela
-      $username = $this->input->post('txtLogin');
-    
       //query the database
       $result = $this->user->login($username, $password);
     

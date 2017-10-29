@@ -12,7 +12,7 @@ class User extends CI_Model
         
         //Executa query
         $query = $this -> db -> get();
-      
+
         //Verifica se query retornou informações do BD
         if($query -> num_rows() == 1)
         //if($user == 'rprad1' && $password == '123')
@@ -26,3 +26,4 @@ class User extends CI_Model
         }
     }
 }
+?>

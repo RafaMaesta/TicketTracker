@@ -5,10 +5,8 @@ function LoginCtrl($scope, $mdToast, Login) {
     
         $scope.user = {}
         
-        $scope.login = function() {
+        $scope.getLogin = function() {
             let user = angular.copy($scope.user)
-            console.log(user)
-            console.log(user.login)
     
             if (!user.login|| !user.password) {
                 $mdToast.show(
