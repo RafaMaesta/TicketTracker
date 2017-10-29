@@ -1,0 +1,4 @@
+BILLING_MYSQL_HOST = "ticketcontrol.mysql.database.azure.com"
+BILLING_MYSQL_USER = "myserveradmin@ticketcontrol"
+BILLING_MYSQL_PASS = "Espartacos_12"
+BILLING_MYSQL_DB = "ticketcontrol"

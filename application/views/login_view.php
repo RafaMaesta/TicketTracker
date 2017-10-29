@@ -1,93 +1,35 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
+<md-content ng-controller="LoginController" layout="row" layout-align="center center" flex>
+	<md-card flex="45">
+		<md-card-title>
+			<md-card-title-text layout-align="center center">
+				<span class="md-headline">Ticket Control</span>
+			</md-card-title-text>
+		</md-card-title>
+		<md-card-content layout="column" layout-align="center center">
+			<form action="check" method="post">
+				<div>
+					<md-input-container>
+						<label>Login</label>
+						<input ng-model="user.login">
+					</md-input-container>
+				</div>
+				<div>
+				<md-input-container>
+					<label>Password</label>
+					<input ng-model="user.password" type="password">
+				</md-input-container>
+				</div>
+			</form>	
+		</md-card-content>
+		<md-card-actions layout="column" layout-align="end end" flex>
+			<md-button class="md-raised md-primary" ng-click="getLogin()">Submit</md-button>
+		</md-card-actions>
+	</md-card>
+</md-content>
 
-	<style type="text/css">
-
-	::selection { background-color: #E13300; color: white; }
-	::-moz-selection { background-color: #E13300; color: white; }
-
-	body {
-		background-color: #fff;
-		margin: 40px;
-		font: 13px/20px normal Helvetica, Arial, sans-serif;
-		color: #4F5155;
-	}
-
-	a {
-		color: #003399;
-		background-color: transparent;
-		font-weight: normal;
-	}
-
-	h1 {
-		color: #444;
-		background-color: transparent;
-		border-bottom: 1px solid #D0D0D0;
-		font-size: 19px;
-		font-weight: normal;
-		margin: 0 0 14px 0;
-		padding: 14px 15px 10px 15px;
-	}
-
-	code {
-		font-family: Consolas, Monaco, Courier New, Courier, monospace;
-		font-size: 12px;
-		background-color: #f9f9f9;
-		border: 1px solid #D0D0D0;
-		color: #002166;
-		display: block;
-		margin: 14px 0 14px 0;
-		padding: 12px 10px 12px 10px;
-	}
-
-	#body {
-		margin: 0 15px 0 15px;
-	}
-
-	p.footer {
-		text-align: right;
-		font-size: 11px;
-		border-top: 1px solid #D0D0D0;
-		line-height: 32px;
-		padding: 0 10px 0 10px;
-		margin: 20px 0 0 0;
-	}
-
-	#container {
-		margin: 10px;
-		border: 1px solid #D0D0D0;
-		box-shadow: 0 0 8px #D0D0D0;
-	}
-	</style>
-</head>
-<body>
-
-<div id="container">
-	<h1>Time Tracker</h1>
-
-	<form action="home" method="post">
-		<div id="body">
-			<p>Login:
-				<input type="text">
-			</p>
-
-			<p>Senha:
-				<input type="password">
-			</p>
-
-			<p>
-				<button>Login</button>
-			</p>
-		</div>
-	</form>
-
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
-</div>
-
-</body>
-</html>
+<!--
+<form action='Check' method='POST'>
+	<input name='txtLogin' type='text' />
+	<input name='txtSenha' type='password' />
+	<button type='Submit'>Vai</button>
+<form>-->
