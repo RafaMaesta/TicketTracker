@@ -4,8 +4,8 @@ class User extends CI_Model
     function login($username, $password)
     {
         //Monta query do SELECT
-        $this -> db -> select('id_func, username, password, id_user_type');
-        $this -> db -> from('usuario');
+        $this -> db -> select('id_developer, username, password, id_user_type');
+        $this -> db -> from('user');
         $this -> db -> where('username', $username);
         $this -> db -> where('password', $password);
         $this -> db -> limit(1);
