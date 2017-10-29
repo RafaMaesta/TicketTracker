@@ -48,7 +48,8 @@ class Check_Login extends CI_Controller {
         {
           $sess_array = array(
             'id_func' => $row->id_func,
-            'username' => $row->username
+            'username' => $row->username,
+            'id_user_type' => $row->id_user_type
           );
           $this->session->set_userdata('logged_in', $sess_array);
         }
