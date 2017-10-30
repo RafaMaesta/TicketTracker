@@ -23,7 +23,8 @@ class Check extends CI_Controller {
         {
           //Field validation failed.  User redirected to login page
           //$this->load->view('login_view');
-          return false;
+          $this->output->set_content_type('application/json');
+          return json_encode(false);
           
           
         }
@@ -32,7 +33,7 @@ class Check extends CI_Controller {
           //Go to private area
           //redirect('Home', 'refresh');
           $this->output->set_content_type('application/json');
-          echo json_encode(true);
+          return json_encode(true);
           
         }
 
